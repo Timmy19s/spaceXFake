@@ -1,0 +1,88 @@
+.pagination {
+    position: absolute;
+    bottom: 4%;
+    width: 100%;
+
+    display: flex;
+    gap: 12px;
+
+    justify-content: center;
+}
+
+.pagination a {
+    width: 52px;
+    padding: 14px 0px;
+
+    border-radius: 50%;
+    background-color: rgb(212, 126, 69);
+    border: 1px solid #050563;
+    color: wheat;
+
+    cursor: pointer;
+    transition: scale 0.3s;
+
+    text-align: center;
+}
+
+.pagination a:hover {
+    scale: 1.1;
+    background-color: #da7851;
+}
+
+
+.post-obj {
+    padding: 20px 20px;
+    margin-left: 14%;
+    margin-bottom: 40px;
+
+    width: 30%;
+    height: 50px;
+    border: 2px solid #45a29e;
+    border-radius: 8px;
+    background: #1f2833;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    box-shadow: 0 0 15px rgba(102, 252, 241, 0.4);
+    display: flex;
+    align-items: center;
+
+    color: #66fcf1;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    user-select: none;
+}
+.post-obj:hover {
+    border-color: #66fcf1;
+    box-shadow: 0 0 25px #66fcf1;
+}
+.post-obj a {
+    z-index: 1;
+    flex-grow: 1;
+
+    color: #66fcf1;
+}
+
+.post-obj p {
+    margin-left: 15px;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #45a29e;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    user-select: text;
+}
+
+/* Ширина постов в мобильной версии*/
+@media(max-width: 768px) {
+    #posts {
+        position: absolute;
+        top: 36%;
+
+        width: 100%;
+    }
+
+    .post-obj {
+        width: 60%;
+    }
+}

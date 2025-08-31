@@ -1,0 +1,40 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block connectCSS %}
+<link rel="stylesheet" href="{% static 'app/css/posts.css'%}?ver={{ appVersion }}">
+{% endblock %}
+
+
+
+{% block content %}
+<!-- posts list -->
+<div id="posts">
+    {% for post in page_obj %}
+    <div class="post-obj">
+        <a href="/showPost/{{ post.pk }}/">{{post.title}}</a><br>
+        <p>{{ post.autor }} 👁({{ post.countView }})</p>
+    </div>
+    
+        
+    {% endfor %}
+</div>
+
+<div class="pagination">
+    {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
+    {% endif %}
+    <a href="#">{{ page_obj.number }}</a>
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">&raquo;</a>
+    {% endif %}
+    
+</div>
+{% endblock %}
+
+
+
+{% block connectJS %}
+{% endblock %}
+
+

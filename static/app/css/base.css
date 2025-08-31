@@ -1,0 +1,171 @@
+html, body {
+    overscroll-behavior-x: none;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    touch-action: pan-y pan-x;
+
+    font-family: "Jost", sans-serif;
+    font-size: large;
+}
+
+
+/* gradient font */
+.gradient-font {
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+/* backgroundImage */
+#backgroundImage {
+    padding: 0;
+    margin: 0;
+
+    position: absolute;
+    top: 0;
+    z-index: -1;
+
+    height: 100%;
+    width: 100%;
+
+    background-image: url("/static/app/mediaM/backgraund.jpg");
+    background-size: cover;
+    background-position: center;
+
+    @media (max-width: 768px) {
+        height: 100vh;
+        width: 100%;
+        /* background-size: contain;; */
+        background-position: 20% 0%;
+    }
+}
+
+
+/* header */
+header {
+    color: #fff;
+    padding: 10px 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+
+    margin-top: 2%;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+
+    margin-left: 10%;
+}
+
+/* Бургер иконка */
+.burger {
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.burger span {
+    display: block;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+/* Анимация иконки при открытии/закрытии меню */
+.burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+.burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* навигация */
+nav { /* Cкрыто по умолчанию */
+    position: absolute;
+    top: 50px; /* под шапкой */
+    right: 0px;
+    width: auto;
+    margin-right: 1%;
+    max-height: 0;
+
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    z-index: 10;
+}
+nav.active {
+    max-height: 300px;
+}
+
+/* Стили ссылок меню */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    border-top: 1px solid #444;
+}
+nav ul li:first-child {
+    border-top: none;
+}
+nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+nav ul li a:hover {
+    background-color: #555;
+}
+
+
+/* Широкий экран*/
+@media(min-width: 768px) {
+    /* скрываем бургер */
+    .burger {
+    display: none; 
+    }
+
+    /* расположить ссылки в ряд */
+    nav {
+    position: static;
+    max-height: none;
+    background: none;
+    display: block;
+    }
+
+    nav ul {
+    display: flex;
+    }
+
+    nav ul li {
+    border: none;
+    }
+
+    nav ul li a {
+    color: #fff;
+    padding: 0 15px;
+    line-height: 50px;
+    }
+
+    nav ul li a:hover {
+    background: rgba(255,255,255,0.2);
+    }
+}

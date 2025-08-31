@@ -41,5 +41,13 @@ class RocketTestCase(TestCase):
         Rocket.objects.get(name='X135').delete()
         self.assertEqual(len(tuple(Rocket.objects.filter(status='in space'))), 1)
 
-        
+class PostAndContent_TestCAse(TestCase):
+    def createPosts(self):
+        Post.objects.create(title='X245')
+        Post.objects.create(title='X135')
+        Post.objects.create(title='Y32')
+    
+    def fillContent(self):
+        # yfg
+        pass
         

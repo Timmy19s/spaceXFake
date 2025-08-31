@@ -1,75 +1,51 @@
+{% extends 'app/base.html' %}
 {% load static %}
 
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpaceX</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="{% static 'app/css/base.css'%}">
-</head>
-<body>
-    <div id="backgroundImage"></div>
+{% block connectCSS %}
+<link rel="stylesheet" href="{% static 'app/css/index.css'%}?ver={{ appVersion }}">
+{% endblock %}
 
 
-    <header>
-    <div class="logo">SpaceX</div>
-    <div class="burger" id="burger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-    <nav id="nav">
-        <ul>
-        <li><a href="#">Технологии</a></li>
-        <li><a href="#">График полетов</a></li>
-        <li><a href="#">О компании</a></li>
-        <li><a href="#">Контакты</a></li>
-        </ul>
-    </nav>
-    </header>
 
-    <div class="label-travel">
-        <h1 class="gradient-font">ПУТЕШЕСТВИЕ</h1>
-        <h3 class="gradient-font">на красную планету</h3>
-    </div>
-    
-    <div class="cards">
-        <table>
-            <tr>
-                <td>
-                    <div class="card"><p class="gradient-font left-card">мы<br><b>1</b><br>на рынке</p></div>
-                </td>
-                <td>
-                    <div class="card"><p class="gradient-font right-card">гарантируем<br><b>50%</b><br>безопасность</p></div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="card"><p class="gradient-font left-card">календарик за<br><b>2001</b>г.<br>в подарок</p></div>
-                </td>
-                <td>
-                    <div class="card"><p class="gradient-font right-card">путешествие<br><b>500</b><br>дней</p></div>
-                </td>
-            </tr>
-        </table>
-    </div>
+{% block content %}
+<div class="label-travel">
+    <h1 class="gradient-font">ПУТЕШЕСТВИЕ</h1>
+    <h3 class="gradient-font">на красную планету</h3>
+</div>
 
-    <div class="button-div">
-        <button id="spacex-btn" onclick="start_rocket()">Начать путешествие</button>
-    </div>
-    
+<div class="cards">
+    <table>
+        <tr>
+            <td>
+                <div class="card"><p class="gradient-font left-card">мы<br><b>1</b><br>на рынке</p></div>
+            </td>
+            <td>
+                <div class="card"><p class="gradient-font right-card">гарантируем<br><b>50%</b><br>безопасность</p></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="card"><p class="gradient-font left-card">календарик за<br><b>2001</b>г.<br>в подарок</p></div>
+            </td>
+            <td>
+                <div class="card"><p class="gradient-font right-card">путешествие<br><b>500</b><br>дней</p></div>
+            </td>
+        </tr>
+    </table>
+</div>
 
-    <img id="rocket" src="{% static 'app/mediaM/rocket.png'%}" alt="rocket">
+<div class="button-div">
+    <button id="spacex-btn" onclick="start_rocket()">Начать путешествие</button>
+</div>
 
-    <div id="translationFLY" ></div>
 
-    <script src="{% static 'app/js/rocket.js'%}"></script>
-    <script src="{% static 'app/js/openNavigation.js'%}"></script>
-</body>
-</html>
+<img id="rocket" src="{% static 'app/mediaM/rocket.png'%}" alt="rocket">
+
+<div id="translationFLY" ></div>
+{% endblock %}
+
+
+
+{% block connectJS %}
+    <script src="{% static 'app/js/rocket.js'%}?ver={{ appVersion }}"></script>
+{% endblock %}

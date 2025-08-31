@@ -1,0 +1,260 @@
+
+/* Стили для вебкита (Chrome, Safari) */
+.content-container::-webkit-scrollbar {
+width: 10px;
+}
+.content-container::-webkit-scrollbar-track {
+background: #0f121a;
+border-radius: 10px;
+}
+.content-container::-webkit-scrollbar-thumb {
+background: #66fcf1;
+border-radius: 10px;
+box-shadow: inset 0 0 5px #45a29e;
+transition: background-color 0.3s ease;
+}
+.content-container::-webkit-scrollbar-thumb:hover {
+background: #45a29e;
+}
+
+
+/* Контейнер контента */
+.content-container {
+    background: rgba(231, 231, 231, 0.4);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    min-height: 200px;
+
+    width: 80%;
+    margin-left: 10%;
+    height: 100%;
+    max-height: 80vh; 
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    /* Скругления и визуальные эффекты скроллбара */
+    scrollbar-width: thin;
+    scrollbar-color: #66fcf1 #1f2833;
+
+}
+.content-container h1 {
+    width: 40%;
+    margin: 0 0 10px 0;
+    
+    font-size: 3rem;
+    font-weight: 900;
+    color: #b4fffa;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow: 0 0 10px #45a29e;
+}
+
+/* содержимое blocks */
+.title-block {
+    margin: 0 1920px 20px 0;
+    padding: 20px;
+    width: 80%;
+
+    font-size: 2rem;
+    font-weight: 600;
+    color: #56ada8;
+    
+    border-radius: 10px;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.text-block {
+    padding: 20px 20px 20px 60px;
+    min-width: 80%;
+    max-width: 80%;
+    margin-bottom: 40px;
+
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: #c5c6c7dd;
+
+    border-radius: 10px;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+/* загрузчик медиа */
+.file-upload {
+    padding: 0 20px;
+    margin-bottom: 40px;
+
+    width: 300px;
+    height: 50px;
+    border: 2px solid #45a29e;
+    border-radius: 8px;
+    background: #1f2833;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    box-shadow: 0 0 15px rgba(102, 252, 241, 0.4);
+    display: flex;
+    align-items: center;
+
+    color: #66fcf1;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    user-select: none;
+}
+.file-upload:hover {
+    border-color: #66fcf1;
+    box-shadow: 0 0 25px #66fcf1;
+}
+.file-upload .button-text {
+    z-index: 1;
+    pointer-events: none;
+    flex-grow: 1;
+}
+
+.file-upload .file-name {
+    margin-left: 15px;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #45a29e;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;
+    user-select: text;
+}
+.hidden-file {
+    position: absolute;
+    top: -100%;
+    left: -100%;
+}
+
+
+
+/* Блок управления — кнопки */
+.controls {
+    position: relative;
+    top: -20px;
+    left: 12%;
+
+    margin-bottom: 30px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.controls button {
+    background-color: #0073aa;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.controls button:hover {
+    background-color: #005d8c;
+}
+
+
+
+/* Общие стили для блоков */
+.content-block {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+/* Текстовые блоки */
+.content-block.text {
+    font-size: 1.125rem;
+    color: #222;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 15px;
+    min-height: 80px;
+    outline: none;
+    background-color: #fff;
+    cursor: text;
+}
+
+.content-block.text:focus {
+    border-color: #0073aa;
+    box-shadow: 0 0 6px #2894f9;
+    background-color: #fefefe;
+}
+
+/* Изображения */
+.content-block.image {
+    text-align: center;
+}
+
+.content-block.image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+.content-block.image figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Видео */
+.content-block.video {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.15);
+}
+
+.content-block.video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 8px;
+}
+
+/* Кнопка удаления блока (в правом верхнем углу блока) */
+.remove-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(255, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+    line-height: 21px;
+    padding: 0;
+}
+
+.remove-btn:hover {
+    opacity: 1;
+}
+
+/* Адаптив для кнопок */
+@media (max-width: 600px) {
+    .controls {
+    display: block;
+
+    left: 4px;
+    }
+
+    .content-container {
+        margin-left: 0;
+        width: 100%;
+        border-radius: 0;
+    }
+}

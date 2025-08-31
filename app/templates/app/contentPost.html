@@ -1,0 +1,43 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block connectCSS %}
+<link rel="stylesheet" href="{% static 'app/css/editPost.css'%}?ver={{ appVersion }}">
+<link rel="stylesheet" href="{% static 'app/css/contentPost.css'%}?ver={{ appVersion }}">
+{% endblock %}
+
+
+
+{% block content %}
+<div id="contentContainer" class="content-container">
+    <h1>{{ title }}</h1>
+
+    {% for block_i in blocks %}
+        <h2 class="title-block">{{block_i}}</h2>
+        {% if block_i.typeContent == 'text' %}
+        
+        <p class="text-block">{{block_i.value}}</p>    
+        {% elif block_i.typeContent == 'media' %}
+            {% if block_i.value|last == '4' %}
+                <video controls width="100%">
+                    <source src="/media/images/{{ block_i.value }}" type="video/mp4" id="video_for_vote" />
+                </video>                
+            {% else %}
+                <div class="spacex-image">
+                    <img src="/media/images/{{ block_i.value }}" alt="{{ block_i.value }}">
+                </div>
+                
+            {% endif %}
+            
+        {% endif %}
+        
+    {% endfor %}
+</div>
+{% endblock %}
+
+
+
+{% block connectJS %}
+{% endblock %}
+
+

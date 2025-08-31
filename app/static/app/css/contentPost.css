@@ -1,0 +1,37 @@
+.spacex-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow:
+    0 0 8px #45a29e,
+    0 0 20px #66fcf1,
+    0 0 40px #45a29e;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+    max-width: 400px;
+    width: 100%;
+    background: linear-gradient(135deg, #0f121a, #1f2833);
+}
+
+.spacex-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.4s ease;
+    filter: drop-shadow(0 0 5px #66fcf1);
+}
+
+/* Эффект при наведении */
+.spacex-image:hover {
+    box-shadow:
+    0 0 12px #45a29e,
+    0 0 30px #66fcf1,
+    0 0 60px #45a29e;
+    outline: none;
+}
+
+.spacex-image:hover img {
+    transform: scale(1.07) rotate(1deg);
+    filter: drop-shadow(0 0 10px #66fcf1);
+}

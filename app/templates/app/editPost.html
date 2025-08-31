@@ -1,0 +1,31 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block connectCSS %}
+<link rel="stylesheet" href="{% static 'app/css/editPost.css'%}?ver={{ appVersion }}">
+{% endblock %}
+
+
+
+{% block content %}
+    <form action="send/" method="post" enctype="multipart/form-data" id="contentContainer" class="content-container">
+        {% csrf_token %}
+
+        <h1>{{ title }}</h1>
+    </form>
+    
+    <div class="controls" aria-label="Управление добавлением контент-блоков">
+        <button id="addTextBtn">Тext</button>
+        <button id="addMediaBtn">Media</button>
+        <!-- <button id="addImageBtn">img</button>
+        <button id="addVideoBtn">video</button> -->
+        <button id="sendForm">Отправить</button>
+    </div>
+{% endblock %}
+
+
+
+{% block connectJS %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static 'app/js/editPost.js'%}?ver={{ appVersion }}"></script>
+{% endblock %}

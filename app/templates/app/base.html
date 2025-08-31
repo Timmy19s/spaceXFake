@@ -1,0 +1,61 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceX</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    {% with appVersion=1.1  %} 
+    <link rel="stylesheet" href="{% static 'app/css/base.css'%}">
+    {% block connectCSS %}
+    {% endblock %}
+    {% endwith %}
+    
+</head>
+
+
+
+<body>
+    <div id="backgroundImage"></div>
+
+
+    <header>
+    <div class="logo">SpaceX</div>
+    <div class="burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <nav id="nav">
+        <ul>
+        <li><a href="/">Главная</a></li>
+        <li><a href="/posts/">Наши проекты</a></li>
+        <li><a href="/admin/">Запланировать полет</a></li>
+        <li><a href="#">Контакты</a></li>
+        </ul>
+    </nav>
+    </header>
+
+
+    {% with appVersion=1.1  %}
+    {% block content %}
+    {% endblock %}    
+    {% endwith %}
+        
+
+    {% with appVersion=1.1  %}
+    <script src="{% static 'app/js/openNavigation.js'%}?ver={{ appVersion }}"></script>
+    {% block connectJS %}
+    {% endblock %}    
+    {% endwith %}
+</body>
+
+</html>

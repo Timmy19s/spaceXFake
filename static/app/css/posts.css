@@ -1,0 +1,31 @@
+.pagination {
+    position: absolute;
+    bottom: 4%;
+    width: 100%;
+
+    display: flex;
+    gap: 12px;
+    padding: 20px;
+
+    justify-content: center;
+}
+
+.pagination a {
+    width: 52px;
+    padding: 14px 0px;
+
+    border-radius: 50%;
+    background-color: rgb(212, 126, 69);
+    border: 1px solid #050563;
+    color: wheat;
+
+    cursor: pointer;
+    transition: scale 0.3s;
+
+    text-align: center;
+}
+
+.pagination a:hover {
+    scale: 1.1;
+    background-color: #da7851;
+}
